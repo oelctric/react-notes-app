@@ -1,0 +1,256 @@
+.note-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  /* Figma strokes sit inside the frame: 20px padding minus the 1px border */
+  padding: 19px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+}
+
+.note-card__date {
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-text-muted);
+}
+
+.note-card__title {
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.05;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.note-card__text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.note-card__title-button {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.note-card__title-button:hover {
+  color: var(--color-primary);
+}
+
+.note-card__bookmark {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-primary);
+}
+
+.note-card__bookmark-icon {
+  display: block;
+}
+
+/* Home card — Figma "Note card" 313 × 232 */
+.note-card_variant_home {
+  gap: 8px;
+  height: 232px;
+}
+
+.note-card__dates {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.note-card__date_type_updated {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.note-card_variant_home .note-card__title {
+  height: 28px;
+}
+
+.note-card_variant_home .note-card__text {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.16;
+  color: var(--color-text);
+}
+
+.note-card__actions {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.note-card__edit {
+  height: 25px;
+  padding: 0 10px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 3px;
+  background: none;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.note-card__edit:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.note-card__actions .note-card__title-button {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.note-card__title-button:hover {
+  color: var(--color-primary);
+}
+
+.note-card__bookmark {
+  margin-left: auto;
+}
+
+.note-card__save-label {
+  display: none;
+}
+
+/* Figma "Save button" 64 × 28 — shown in place of the bookmark on hover */
+.note-card_variant_home:hover .note-card__bookmark:not(.note-card__bookmark_active),
+.note-card_variant_home .note-card__bookmark:not(.note-card__bookmark_active):focus-visible {
+  width: 64px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+}
+
+.note-card_variant_home:hover .note-card__bookmark:not(.note-card__bookmark_active) .note-card__bookmark-icon,
+.note-card_variant_home .note-card__bookmark:not(.note-card__bookmark_active):focus-visible .note-card__bookmark-icon {
+  display: none;
+}
+
+.note-card_variant_home:hover .note-card__save-label,
+.note-card_variant_home .note-card__bookmark:focus-visible .note-card__save-label {
+  display: block;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--color-surface);
+  text-transform: uppercase;
+}
+
+/* Profile card — Figma "Note card" 296 × 224 */
+.note-card_variant_profile {
+  position: relative;
+  height: 224px;
+  padding-bottom: 23px;
+  box-shadow: 0 2px 8px rgba(21, 25, 28, 0.06);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card_variant_profile .note-card__date {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.note-card_variant_profile .note-card__title {
+  margin-top: 10px;
+  line-height: 28px;
+}
+
+.note-card_variant_profile .note-card__text {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text-body);
+}
+
+.note-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.note-card__tags {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note-card__tag,
+.note-card__badge {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 15px;
+  font-size: 15px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.note-card__tag {
+  overflow: hidden;
+  background-color: var(--color-tag);
+  text-overflow: ellipsis;
+}
+
+.note-card__badge {
+  display: none;
+  background-color: #d6e8f6;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.note-card_variant_profile.note-card_saved:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary), 0 2px 8px rgba(21, 25, 28, 0.06);
+}
+
+.note-card_variant_profile.note-card_saved:hover .note-card__badge {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .note-card_variant_home,
+  .note-card_variant_profile {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .note-card_variant_home .note-card__actions {
+    padding-top: 16px;
+  }
+}

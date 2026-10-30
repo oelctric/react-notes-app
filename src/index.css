@@ -1,0 +1,84 @@
+@import url("./vendor/fonts.css");
+
+:root {
+  --color-primary: #247fc1;
+  --color-primary-dark: #1c6aa3;
+  --color-text: #15191c;
+  --color-text-body: #3a4148;
+  --color-text-muted: #737b82;
+  --color-border: #dde2e5;
+  --color-surface: #ffffff;
+  --color-page: #f6f7f8;
+  --color-hero: #f3f5f7;
+  --color-profile: #e9f2f7;
+  --color-tag: #eceff1;
+  --color-error: #d93025;
+  --font-display: "Roboto Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
+  --page-gutter: 64px;
+  --header-height: 104px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --page-gutter: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --page-gutter: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --page-gutter: 16px;
+  }
+}
