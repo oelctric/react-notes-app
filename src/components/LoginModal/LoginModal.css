@@ -1,0 +1,10 @@
+/* Figma Login form: 58px of empty space under the switch link */
+.modal_type_login .modal__content {
+  padding-bottom: 81px;
+}
+
+@media screen and (max-width: 480px) {
+  .modal_type_login .modal__content {
+    padding-bottom: 28px;
+  }
+}

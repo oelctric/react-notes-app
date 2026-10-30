@@ -1,0 +1,204 @@
+/* Figma "Welcome": 1440 × 368, content centered with a 28px gap */
+.main__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 368px;
+  padding: 40px var(--page-gutter);
+  background-color: var(--color-hero);
+  text-align: center;
+}
+
+.main__title {
+  max-width: 800px;
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.main__new-note {
+  height: 56px;
+  padding: 0 27px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--color-surface);
+  transition: background-color 0.2s ease;
+}
+
+.main__new-note:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* The welcome section stays under the header while the notes scroll.
+   Notes only get the space below header + hero, so on shorter windows the
+   hero is pinned in a compact form, and below 640px tall it scrolls away. */
+@media screen and (min-width: 769px) and (min-height: 640px) {
+  .main__hero {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 4;
+  }
+}
+
+@media screen and (min-width: 769px) and (min-height: 640px) and (max-height: 819px) {
+  .main__hero {
+    gap: 20px;
+    min-height: 0;
+    padding: 24px var(--page-gutter);
+  }
+
+  .main__title {
+    font-size: 48px;
+  }
+
+  .main__new-note {
+    height: 48px;
+  }
+}
+
+/* Figma "Notes workspace": 44px / 64px padding */
+.main__notes {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 44px 64px;
+}
+
+.main__guest-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 14px 16px 14px 20px;
+  border: 1px solid #c9dff0;
+  border-radius: 8px;
+  background-color: #eaf3fa;
+}
+
+.main__guest-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text-body);
+}
+
+.main__guest-text strong {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.main__guest-link {
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.main__guest-dismiss {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737b82' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E") center no-repeat;
+}
+
+.main__guest-dismiss:hover {
+  background-color: #d6e8f6;
+}
+
+.main__notes-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.main__notes-title {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.main__clear {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.main__clear:hover {
+  text-decoration: underline;
+}
+
+.main__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.main__empty-title {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.main__message {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.main__message_type_error {
+  color: var(--color-error);
+}
+
+@media screen and (max-width: 1024px) {
+  .main__notes {
+    padding: 40px var(--page-gutter);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__hero {
+    min-height: 0;
+    padding: 56px var(--page-gutter);
+  }
+
+  .main__title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__title {
+    font-size: 32px;
+  }
+
+  .main__break {
+    display: none;
+  }
+
+  .main__new-note {
+    width: 100%;
+    max-width: 288px;
+  }
+}

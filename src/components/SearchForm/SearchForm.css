@@ -1,0 +1,54 @@
+/* Figma "Search field": 470 × 48, radius 30, 20px padding, no icon */
+.search-form {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.search-form__input {
+  width: 100%;
+  height: 48px;
+  padding: 0 19px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background-color: var(--color-surface);
+  font-size: 19px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-form__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-form__input[aria-invalid="true"]::placeholder {
+  color: var(--color-error);
+}
+
+.search-form__input:focus {
+  border-color: var(--color-primary);
+}
+
+.search-form__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-form__button {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    grid-area: search;
+  }
+
+  .search-form__input {
+    height: 44px;
+    font-size: 16px;
+  }
+}

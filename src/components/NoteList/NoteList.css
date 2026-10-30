@@ -1,0 +1,74 @@
+.note-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+}
+
+.note-list__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Figma home workspace: 313px cards, 20px columns, 22px rows */
+.note-list_variant_home .note-list__grid {
+  gap: 22px 20px;
+}
+
+/* Figma profile grid: 296px cards, 24px gaps, 1256px wide */
+.note-list_variant_profile .note-list__grid {
+  gap: 24px;
+  max-width: 1256px;
+}
+
+.note-list__item {
+  display: flex;
+  min-width: 0;
+}
+
+.note-list__more {
+  height: 56px;
+  padding: 0 27px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--color-surface);
+  transition: background-color 0.2s ease;
+}
+
+.note-list__more:hover {
+  background-color: var(--color-primary-dark);
+}
+
+@media screen and (max-width: 1200px) {
+  .note-list__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .note-list__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .note-list_variant_home .note-list__grid,
+  .note-list_variant_profile .note-list__grid {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .note-list__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .note-list__more {
+    width: 100%;
+  }
+}

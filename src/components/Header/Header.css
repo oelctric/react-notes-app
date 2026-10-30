@@ -1,0 +1,66 @@
+/* Stays put while the page content scrolls underneath */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto minmax(0, 470px) 1fr;
+  align-items: center;
+  gap: 64px;
+  min-height: var(--header-height);
+  padding: 0 48px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header__logo {
+  width: 42px;
+  height: 52px;
+}
+
+.header__name {
+  font-family: var(--font-display);
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    gap: 32px;
+    padding: 0 var(--page-gutter);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand nav"
+      "search search";
+    gap: 12px 16px;
+    min-height: 0;
+    padding: 16px var(--page-gutter);
+  }
+
+  .header__brand {
+    grid-area: brand;
+  }
+
+  .header__logo {
+    width: 32px;
+    height: 40px;
+  }
+
+  .header__name {
+    font-size: 28px;
+  }
+}

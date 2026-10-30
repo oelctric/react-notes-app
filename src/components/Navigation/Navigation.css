@@ -1,0 +1,149 @@
+.navigation {
+  justify-self: end;
+}
+
+.navigation__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__link {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navigation__link:hover,
+.navigation__link_active {
+  color: var(--color-primary);
+}
+
+.navigation__link_active {
+  font-weight: 700;
+}
+
+.navigation__link_type_muted {
+  color: var(--color-text-muted);
+}
+
+.navigation__signin {
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  background-color: var(--color-surface);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-primary);
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation__signin:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.navigation__toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    grid-area: nav;
+  }
+
+  .navigation__toggle {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .navigation__toggle-bar,
+  .navigation__toggle-bar::before,
+  .navigation__toggle-bar::after {
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .navigation__toggle-bar {
+    top: 19px;
+  }
+
+  .navigation__toggle-bar::before,
+  .navigation__toggle-bar::after {
+    content: "";
+    left: 0;
+  }
+
+  .navigation__toggle-bar::before {
+    top: -6px;
+  }
+
+  .navigation__toggle-bar::after {
+    top: 6px;
+  }
+
+  .navigation__toggle_open .navigation__toggle-bar {
+    background-color: transparent;
+  }
+
+  .navigation__toggle_open .navigation__toggle-bar::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .navigation__toggle_open .navigation__toggle-bar::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .navigation__list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px var(--page-gutter) 16px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 12px 24px rgba(21, 25, 28, 0.08);
+  }
+
+  .navigation__list_open {
+    display: flex;
+  }
+
+  .navigation__link {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: left;
+  }
+
+  .navigation__signin {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
